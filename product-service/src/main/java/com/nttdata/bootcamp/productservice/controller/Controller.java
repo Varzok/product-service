@@ -9,21 +9,20 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Controller{
 	
-	//Modo 1 via @Autowired
 	@Autowired
 	Environment environment;
 	
-	@GetMapping("/port2")
-	public String getPort2() {
+	@GetMapping("/port")
+	public String getPort() {
 		return "El puerto del micro es "+ environment.getProperty("local.server.port");
 	}
 	
-	//Modo 2  via @Value
+	/*
 	@Value("${server.port}")
 	private String port;
 	
 	@GetMapping("/port")
 	public String getPort() {
 		return "El puerto del micro es "+ port;
-	}
+	}*/
 }
